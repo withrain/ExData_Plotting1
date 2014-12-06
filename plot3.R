@@ -4,7 +4,7 @@ hpc = read.csv.sql("household_power_consumption.txt", sep = ';', header=TRUE,
                    sql = "select * from file where Date='1/2/2007' or Date='2/2/2007'")
 png('plot3.png')
 plot(x = strptime(paste(hpc$Date, hpc$Time), format = '%d/%m/%Y %H:%M:%S'), 
-     y=hpc$Sub_metering_1, type='l', main='', ylab='Energe sub metering', xlab='')
+     y=hpc$Sub_metering_1, type='l', ylab='Energe sub metering', xlab='')
 points(x = strptime(paste(hpc$Date, hpc$Time), format = '%d/%m/%Y %H:%M:%S'), 
      y=hpc$Sub_metering_2, type='l', col="red")
 points(x = strptime(paste(hpc$Date, hpc$Time), format = '%d/%m/%Y %H:%M:%S'), 
